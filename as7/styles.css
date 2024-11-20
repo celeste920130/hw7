@@ -9,7 +9,7 @@ body, html {
 /* 容器樣式 */
 .forest-container {
     position: relative;
-    height: 200vh; /* 模擬滾動場景 */
+    height: 90vh; /* 模擬滾動場景 */
     overflow: hidden;
 }
 
@@ -22,56 +22,84 @@ body, html {
     height: 100%;
     background-size: cover;
     background-attachment: fixed;
-    z-index: 1;
+    z-index: 2;
     opacity: 1;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 1.3s ease-in-out;
 }
 
+/* 完整森林 */
 .full-forest {
     background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20240413/pngtree-forest-cartoon-background-image_15714593.jpg'); /* 完整森林圖片 */
-    z-index: 2;
+    z-index: 3;
 }
 
+/* 被砍伐的森林 */
 .deforested-forest {
     background-image: url('https://st3.depositphotos.com/1526816/14685/v/450/depositphotos_146857687-stock-illustration-deforestation-scene-at-daytime.jpg'); /* 被砍伐森林圖片 */
-    z-index: 1;
+    z-index: 4;
     opacity: 0;
+}
+
+/* 森林文字內容 */
+.forest-text {
+    position: absolute;
+    top: 40%; /* 文字顯示在中央偏上的位置 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    z-index: 5;
+}
+
+.forest-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.forest-text p {
+    font-size: 1.2rem;
+    line-height: 1.5;
 }
 
 /* 動物容器 */
 .animal-container {
     position: relative;
-    height: 200vh;
+    height: 200vh; /* 提供滾動空間 */
     z-index: 3;
 }
 
 /* 動物樣式 */
 .animal {
     position: absolute;
-    bottom: 10%;
-    width: 80px;
-    height: 80px;
+    bottom: 85%; /* 提高動物的位置 */
+    width: 150px;
+    height: 150px;
     background-size: cover;
-    animation: move-left-right 4s infinite alternate ease-in-out;
+    animation: move-left-right 6s infinite alternate ease-in-out;
 }
 
 .squirrel {
-    background-image: url('https://png.pngtree.com/png-vector/20241114/ourlarge/pngtree-lovable-squirrel-character-with-open-arms-png-image_14420806.png');
-    left: 10%;
+    background-image: url('surrel.png');
+    right: 15%;
 }
 
 .rabbit {
     background-image: url('rabbit.png');
-    right: 10%;
+    left: 10%;
+}
+.fox {
+    background-image: url('fox.png');
+    right: 5%;
 }
 
 /* 動物動畫 */
 @keyframes move-left-right {
     0% {
-        transform: translateX(0);
+        transform: translateX(-50px);
     }
     100% {
-        transform: translateX(30px);
+        transform: translateX(50px);
     }
 }
 
